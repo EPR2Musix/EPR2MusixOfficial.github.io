@@ -1,0 +1,262 @@
+/* style.css */
+
+/* Basic Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Updated body with improved animated gradient background */
+body {
+    font-family: 'Cyberjunkies', sans-serif;
+    color: #333;
+    line-height: 1.6;
+    padding: 0 20px;
+    background: linear-gradient(270deg, #FF0000, #00FF00, #FFFF00, #0000FF, #8B00FF, #FFFFFF, #000000);
+    background-size: 1400% 1400%;
+    animation: gradientBackgroundMove 16s ease infinite;
+    overflow-x: hidden;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+header {
+    background-color: rgba(0, 0, 0, 0.7);
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+    opacity: 0;
+    transform: translateY(-50px);
+    animation: slideInHeader 1s ease-out forwards;
+    margin-bottom: 30px;
+}
+
+header h4 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin: 0;
+    letter-spacing: 1px;
+}
+
+.content {
+    position: relative;
+    z-index: 1;
+    color: #fff;
+    text-align: center;
+    padding: 50px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    opacity: 0;
+    transform: translateY(50px);
+    animation: slideUpFadeIn 1s ease-out forwards;
+    flex-grow: 1;
+}
+
+.content p {
+    font-size: 1rem;
+    margin-bottom: 20px;
+    line-height: 1.6;
+}
+
+.cta-button {
+    display: inline-block;
+    background-color: #007bff;
+    color: #fff;
+    padding: 15px 30px;
+    font-size: 1.1rem;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: 600;
+    margin: 10px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.cta-button:hover {
+    background-color: #0056b3;
+    transform: scale(1.05);
+}
+
+.logo {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    margin-top: 30px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
+    cursor: pointer;
+    margin-bottom: 20px;
+}
+
+.logo:hover {
+    transform: scale(1.1);
+}
+
+iframe {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 16 / 9;
+    border: none;
+    margin-top: 20px;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    justify-content: center;
+    align-items: center;
+    z-index: 10000;
+    opacity: 0;
+    animation: fadeInModalBackground 0.3s ease-out forwards;
+}
+
+.modal-content {
+    background-color: #fff;
+    border-radius: 8px;
+    padding: 30px;
+    text-align: center;
+    width: 60%;
+    max-width: 800px;
+    opacity: 0;
+    transform: scale(0.8);
+    animation: scaleUpModal 0.3s ease-out forwards;
+}
+
+.modal-content h3 {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+}
+
+.modal-content a {
+    display: inline-block;
+    background-color: #007bff;
+    color: #fff;
+    padding: 15px 30px;
+    text-decoration: none;
+    border-radius: 5px;
+    margin: 10px;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+}
+
+.modal-content a:hover {
+    background-color: #0056b3;
+}
+
+.close-btn {
+    display: inline-block;
+    background-color: #ff0000;
+    color: #fff;
+    padding: 10px 20px;
+    font-size: 1rem;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-top: 20px;
+    cursor: pointer;
+    transition: background-color 0.10s ease-out;
+}
+
+.close-btn:hover {
+    background-color: #cc0000;
+}
+
+/* Updated keyframes for gradient background */
+@keyframes gradientBackgroundMove {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+@keyframes slideInHeader {
+    0% { opacity: 0; transform: translateY(-50px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideUpFadeIn {
+    0% { opacity: 0; transform: translateY(50px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes scaleUpModal {
+    0% { opacity: 0; transform: scale(0.8); }
+    100% { opacity: 1; transform: scale(1); }
+}
+
+@keyframes fadeInModalBackground {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+footer {
+    background-color: rgba(0, 0, 0, 0.7);
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+    margin-top: 30px;
+}
+
+.footer-logo {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+/* Video Gallery Styles */
+.gallery-title {
+    text-align: center;
+    font-size: 2rem;
+    color: #fff;
+    margin: 30px 0 10px;
+}
+
+.video-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 20px;
+    padding: 20px;
+    color: #000;
+}
+
+.video-card {
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    padding: 15px;
+    transition: transform 0.3s ease;
+}
+
+.video-card:hover {
+    transform: scale(1.02);
+}
+
+.video-card video {
+    width: 100%;
+    border-radius: 8px;
+}
+
+.video-card h2 {
+    margin: 10px 0 5px;
+    font-size: 1.1rem;
+    color: #222;
+}
+
+.video-card p {
+    font-size: 0.95rem;
+    margin-bottom: 5px;
+    color: #555;
+}
+
+.video-card .artist {
+    font-style: italic;
+    color: #888;
+    font-size: 0.9rem;
+}
